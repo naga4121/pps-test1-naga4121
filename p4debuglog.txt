@@ -1,0 +1,147 @@
+gcc -g p4original.c
+p4original.c: In function ‘input’:
+p4original.c:5:3: error: unknown type name ‘print’; did you mean ‘int’?
+   print f("enter a value :\n");
+   ^~~~~
+   int
+p4original.c:5:11: error: expected declaration specifiers or ‘...’ before string constant
+   print f("enter a value :\n");
+           ^~~~~~~~~~~~~~~~~~~
+p4original.c:7:11: error: expected ‘;’ before ‘:’ token
+ 
+ gcc -g p4original.c
+p4original.c: In function ‘input’:
+p4original.c:7:11: error: expected ‘;’ before ‘:’ token
+   return a:
+           ^
+ gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+ 
+ gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+ 
+ gcc -g p4original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+ 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+ 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b 27
+Breakpoint 1 at 0x7e2: file p4original.c, line 27.
+(gdb) r
+Starting program: /home/runner/pps-test1-naga4121-4/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:27
+27    a=input();
+(gdb) s
+input () at p4original.c:3
+3   {
+(gdb) n
+5     printf("enter a value:\n");
+(gdb) n
+enter a value:
+6     scanf("%d",&a);
+(gdb) n
+4
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4original.c:28
+28    b=input();
+(gdb) s
+input () at p4original.c:3
+3   {
+(gdb) n
+5     printf("enter a value:\n");
+(gdb) n
+enter a value:
+6     scanf("%d",&a);
+(gdb) n
+11
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4original.c:29
+29    c=input();
+(gdb) s
+input () at p4original.c:3
+3   {
+(gdb) n
+5     printf("enter a value:\n");
+(gdb) n
+enter a value:
+6     scanf("%d",&a);
+(gdb) n
+29
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4original.c:30
+30    cmp(a,b,c);
+(gdb) s
+cmp (a=4, b=11, c=29) at p4original.c:11
+11    if(a>b&&a>c)
+(gdb) n
+15    else if(b>c&&b>a)
+(gdb) n
+19    else if(c>a&&c>b)
+(gdb) n
+21      printf("c is large\n"); 
+(gdb) n
+c is large
+23  }
+(gdb) n
+main () at p4original.c:31
+31    return 0;
+(gdb) n
+33  }(gdb) n
+__libc_start_main (main=0x5637a72007da <main>, argc=1, argv=0x7fff06f2e458, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fff06f2e448) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) 
