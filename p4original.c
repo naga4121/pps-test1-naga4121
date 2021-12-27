@@ -10,24 +10,29 @@ int cmp(int a,int b,int c)
 {
   if(a>b&&a>c)
   {
-    printf("a is large\n");
+    return a;
   }
   else if(b>c&&b>a)
   {
-    printf("b is large\n");
+    return b;
   }
   else if(c>a&&c>b)
   {
-    printf("c is large\n"); 
+    return c;
   }
+}
+void output(int a, int b, int c, int large)
+{
+  printf("The largest of %d,%d,%d is %d\n", a, b, c, large);
 }
 int main()
 {
-  int a,b,c;
+  int a,b,c,large;
   a=input();
   b=input();
   c=input();
-  cmp(a,b,c);
+  large=cmp(a,b,c);
+  output(a,b,c,large);
   return 0;
 
 }
