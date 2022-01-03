@@ -14,7 +14,7 @@ int sum_n(int n)
 }
 void output(int n, int sum)
 {
-  printf("The sum of first %d  natural numbers are %d", n, sum);
+  printf("The sum  first %d  natural numbers are %d", n, sum);
 }
 int main()
 {

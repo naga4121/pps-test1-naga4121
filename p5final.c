@@ -1,11 +1,11 @@
 #include<stdio.h>
 void input(int *a, int *b, int *c)
 {
- printf("Enter the first number: ");
+ printf("Enter the first number:\n ");
  scanf("%d", a);
- printf("Enter the second number: ");
+ printf("Enter the second number:\n ");
  scanf("%d", b);
- printf("Enter the third number: ");
+ printf("Enter the third number:\n ");
  scanf("%d", c);
 }
 int cmp(int *a,int *b,int *c)

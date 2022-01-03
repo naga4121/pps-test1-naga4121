@@ -1,5 +1,4 @@
 gcc -g p5original.c
- 
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -16,49 +15,30 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
-(gdb) b 22
-Breakpoint 1 at 0x7c7: file p6original.c, line 22.
+(gdb) b main
+Breakpoint 1 at 0x853: file p5original.c, line 31.
 (gdb) r
 Starting program: /home/runner/pps-test1-naga4121-4/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6original.c:22
-22    n=input_n();
-(gdb) s
-input_n () at p6original.c:3
-3   {
+Breakpoint 1, main () at p5original.c:31
+31  {
 (gdb) n
-5    printf("Enter the number of terms: ");
+33    input(&a,&b,&c);
 (gdb) n
-6    scanf("%d", &n);
+Enter the first number: 25
+Enter the second number: 89
+Enter the third number: 412
+34    large=cmp(&a,&b,&c);
 (gdb) n
-Enter the number of terms: 3
-7    return n;
+35    output(a,b,c,large);
+(gdb) nm
+Undefined command: "nm".  Try "help".
 (gdb) n
-8   }
+The largest of 25,89,412 is 412
+36    return 0;
 (gdb) n
-main () at p6original.c:23
-23    sum=sum_n(n);
-(gdb) s
-sum_n (n=3) at p6original.c:12
-12    sum=(n*(n+1))/2;
-(gdb) s
-13    return sum;
-(gdb) n
-14  }
-(gdb) n
-main () at p6original.c:24
-24    output(n,sum);
-(gdb) s
-output (n=3, sum=6) at p6original.c:17
-17    printf("The sum of first %d  natural numbers are %d", n, sum);
-(gdb) n
-18  }
-(gdb) n
-main () at p6original.c:25
-25    return 0;
-(gdb) n
-26  }(gdb) c
+38  }(gdb) c
 Continuing.
-The sum of first 3  natural numbers are 6[Inferior 1 (process 295) exited normally]
- 
+[Inferior 1 (process 54) exited normally]
+(gdb) 
